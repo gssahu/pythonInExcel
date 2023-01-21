@@ -1,4 +1,5 @@
 Sub python()
+Dim ar As Variant
 
 Open "c:\tmp\t.py" For Output As #1
 Print #1, "for i in range(1,11):"
@@ -6,6 +7,12 @@ Print #1, "    print(i)"
 Close #1
 
 Set ws = CreateObject("Wscript.shell")
-txt = ws.exec("C:\Users\<user>\AppData\Local\Programs\Python\Python39\pythonw.exe c:\tmp\t.py").stdout.readall()
-Debug.Print txt
+txt = ws.exec("C:\Users\PRIYANSH\AppData\Local\Programs\Python\Python39\pythonw.exe c:\tmp\t.py").stdout.readall()
+
+ar = Split(tx, vbCrLf)
+For i = 0 To UBound(ar)
+Cells(i + 1, 1).Value = ar(i)
+Next
+
 End Sub
+
