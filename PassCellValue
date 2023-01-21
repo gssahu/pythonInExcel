@@ -1,0 +1,9 @@
+Sub python()
+
+vbx = Cells(1, 1).Value
+cmd = "x=" & vbx & ";" & _
+      "print(x*x)"
+Set ws = CreateObject("Wscript.shell")
+Debug.Print ws.exec("C:\Users\PRIYANSH\AppData\Local\Programs\Python\Python39\pythonw.exe -B -c " & cmd & "").stdout.readall()
+End Sub
+
