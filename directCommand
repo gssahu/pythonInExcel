@@ -1,0 +1,9 @@
+Sub python()
+Dim ar As Variant
+
+cmd = "print('hello');" & _
+      "print('world')"
+Set ws = CreateObject("Wscript.shell")
+Debug.Print ws.exec("C:\Users\PRIYANSH\AppData\Local\Programs\Python\Python39\pythonw.exe -B -c " & cmd & "").stdout.readall()
+End Sub
+
